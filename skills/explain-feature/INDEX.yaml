@@ -1,0 +1,13 @@
+title: Explain Feature
+description: Given a feature name — explain how it works end-to-end in plain language, including permissions, config, and data flow
+tags: [support, feature, explanation, knowledge]
+aliases: [explain, how-does, feature-overview]
+intent_terms:
+  - explain how a feature works
+  - how does this feature work
+  - what does this do
+  - walk me through
+  - feature overview
+documents:
+  - path: SKILL.md
+    description: Feature explanation workflow for Support personnel

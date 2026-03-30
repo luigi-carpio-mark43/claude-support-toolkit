@@ -1,0 +1,14 @@
+title: Known Limitations
+description: Given a feature area — search for TODOs, FIXMEs, hacks, known bugs, or workarounds in the code
+tags: [support, limitations, bugs, todo, fixme, workaround, known-issues]
+aliases: [known-issues, todos, fixmes, hacks, workarounds, limitations]
+intent_terms:
+  - known issues with
+  - any workarounds for
+  - known limitations
+  - is this a known bug
+  - TODOs in this area
+  - tech debt
+documents:
+  - path: SKILL.md
+    description: Known limitations search workflow for Support personnel

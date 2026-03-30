@@ -1,0 +1,14 @@
+title: Investigate Issue
+description: Given a symptom, error, or customer complaint — trace through the codebase to explain what's happening, what could cause it, and what Support should check
+tags: [support, investigation, troubleshooting, triage]
+aliases: [investigate-issue, triage, diagnose]
+intent_terms:
+  - investigate an issue
+  - diagnose a problem
+  - figure out why something is broken
+  - trace a bug
+  - customer is reporting
+  - something isn't working
+documents:
+  - path: SKILL.md
+    description: Investigation workflow for Support personnel

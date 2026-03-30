@@ -1,0 +1,13 @@
+title: Trace Error
+description: Given an error message or stack trace — decode it, explain what failed and why, and suggest next steps for Support
+tags: [support, error, stack-trace, troubleshooting, decode]
+aliases: [decode-error, error-lookup, stack-trace, what-does-this-error-mean]
+intent_terms:
+  - what does this error mean
+  - decode this stack trace
+  - customer got this error
+  - explain this exception
+  - error message lookup
+documents:
+  - path: SKILL.md
+    description: Error decoding workflow for Support personnel

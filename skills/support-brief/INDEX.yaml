@@ -1,0 +1,14 @@
+title: Support Brief
+description: Given a feature area — generate a concise, support-friendly summary suitable for sharing with teammates or a knowledge base
+tags: [support, documentation, brief, summary, knowledge-base]
+aliases: [brief, summary, feature-summary, kb-article, support-doc]
+intent_terms:
+  - write a support brief
+  - summarize this feature for support
+  - create a knowledge base article
+  - explain this for my team
+  - document this feature
+  - share this with teammates
+documents:
+  - path: SKILL.md
+    description: Support brief generation workflow

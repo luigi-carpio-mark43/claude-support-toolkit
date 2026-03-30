@@ -1,0 +1,15 @@
+title: Check Permissions
+description: Look up exactly which abilities and permissions are required for a feature, endpoint, or action
+tags: [support, permissions, abilities, access, roles]
+aliases: [permissions, abilities, access-check, who-can]
+intent_terms:
+  - what permissions are needed
+  - what abilities does this require
+  - who can access this
+  - permission check
+  - user can't access
+  - access denied
+  - ability required
+documents:
+  - path: SKILL.md
+    description: Permission lookup workflow for Support personnel

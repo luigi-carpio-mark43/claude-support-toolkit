@@ -1,0 +1,14 @@
+title: Data Flow
+description: Given an operation — trace the full data flow from frontend action through API to database and back
+tags: [support, data-flow, architecture, trace, end-to-end]
+aliases: [trace-flow, flow, how-data-moves, end-to-end]
+intent_terms:
+  - how does data flow
+  - trace the data
+  - what happens when a user
+  - end to end flow
+  - from frontend to backend
+  - where does this data go
+documents:
+  - path: SKILL.md
+    description: Data flow tracing workflow for Support personnel

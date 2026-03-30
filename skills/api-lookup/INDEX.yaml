@@ -1,0 +1,14 @@
+title: API Lookup
+description: Given an endpoint path or keyword — find the REST endpoint, explain what it does, its parameters, permissions, and response
+tags: [support, api, endpoint, rest, request]
+aliases: [endpoint, api-check, rest-endpoint, endpoint-lookup]
+intent_terms:
+  - what does this endpoint do
+  - find the API for
+  - what endpoint handles
+  - API lookup
+  - REST endpoint for
+  - what does this request do
+documents:
+  - path: SKILL.md
+    description: API endpoint lookup workflow for Support personnel

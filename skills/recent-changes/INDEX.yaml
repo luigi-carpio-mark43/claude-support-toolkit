@@ -1,0 +1,15 @@
+title: Recent Changes
+description: Given a feature area — check recent git commits to see what changed, when, and by whom — useful for regression investigation
+tags: [support, git, changes, history, regression, release]
+aliases: [what-changed, git-history, changelog, regression-check]
+intent_terms:
+  - what changed recently
+  - was this feature modified
+  - when did this change
+  - who changed this
+  - this was working before
+  - recent commits
+  - regression
+documents:
+  - path: SKILL.md
+    description: Recent changes lookup workflow for Support personnel

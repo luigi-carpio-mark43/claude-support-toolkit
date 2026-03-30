@@ -1,0 +1,14 @@
+title: Find Config
+description: Given a feature area — find all configuration flags, department settings, and feature flags that affect its behavior
+tags: [support, configuration, feature-flags, settings, department]
+aliases: [config, settings, feature-flag, flags, department-config]
+intent_terms:
+  - what config affects this
+  - feature flags for
+  - department settings
+  - is there a setting for
+  - how to enable this feature
+  - toggle this feature
+documents:
+  - path: SKILL.md
+    description: Configuration lookup workflow for Support personnel
