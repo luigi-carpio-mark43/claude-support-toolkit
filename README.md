@@ -26,31 +26,70 @@ Sets the ground rules for how Claude Code behaves for Support:
 | `/known-limitations` | Search for TODOs, FIXMEs, and documented limitations |
 | `/support-brief` | Generate a shareable, KB-ready summary of a feature |
 
+## Prerequisites
+
+- [Claude Code](https://claude.ai/claude-code) installed and authenticated
+- Git (for cloning this repo)
+- Access to the Mark43 `mark43` and/or `rms` repositories
+
 ## Setup
 
-### Quick Install (Bash)
+### Windows (PowerShell)
 
-From the root of this repo, run:
+Most of the team uses Windows. From the root of this repo, run:
+
+```powershell
+.\install.ps1
+```
+
+> If you get an execution policy error, run this first:
+> ```powershell
+> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+> ```
+
+### macOS / Linux (Bash)
 
 ```bash
 ./install.sh
 ```
 
-This copies the CLAUDE.md and skills to your `~/.claude/` directory.
+Both scripts copy the CLAUDE.md and skills into your `~/.claude/` directory (`%USERPROFILE%\.claude\` on Windows).
+
+> **Note:** If you already have a `~/.claude/CLAUDE.md`, the install script will back it up before overwriting.
 
 ### Manual Install
 
-1. Copy `CLAUDE.md` to `~/.claude/CLAUDE.md`:
-   ```bash
-   cp CLAUDE.md ~/.claude/CLAUDE.md
-   ```
+<details>
+<summary>Windows (PowerShell)</summary>
 
-2. Copy the skills directory to `~/.claude/skills/`:
-   ```bash
-   cp -r skills/* ~/.claude/skills/
-   ```
+```powershell
+# Back up existing CLAUDE.md if you have one
+Copy-Item "$env:USERPROFILE\.claude\CLAUDE.md" "$env:USERPROFILE\.claude\CLAUDE.md.backup" -ErrorAction SilentlyContinue
 
-> **Note:** If you already have a `~/.claude/CLAUDE.md`, the install script will back it up before overwriting.
+# Copy CLAUDE.md
+Copy-Item CLAUDE.md "$env:USERPROFILE\.claude\CLAUDE.md" -Force
+
+# Copy skills
+Copy-Item -Recurse -Force skills\* "$env:USERPROFILE\.claude\skills\"
+```
+
+</details>
+
+<details>
+<summary>macOS / Linux (Bash)</summary>
+
+```bash
+# Back up existing CLAUDE.md if you have one
+cp ~/.claude/CLAUDE.md ~/.claude/CLAUDE.md.backup 2>/dev/null
+
+# Copy CLAUDE.md
+cp CLAUDE.md ~/.claude/CLAUDE.md
+
+# Copy skills
+cp -r skills/* ~/.claude/skills/
+```
+
+</details>
 
 ## Usage
 
@@ -66,7 +105,16 @@ Once installed, open Claude Code in any of the Mark43 repos (`mark43`, `rms`, et
 
 ## Updating
 
-Pull the latest from this repo and re-run `./install.sh`.
+Pull the latest from this repo and re-run the install script:
+
+```powershell
+git pull
+.\install.ps1        # Windows
+```
+```bash
+git pull
+./install.sh         # macOS / Linux
+```
 
 ## Contributing
 
