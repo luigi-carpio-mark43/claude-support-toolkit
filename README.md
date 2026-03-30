@@ -15,16 +15,16 @@ Sets the ground rules for how Claude Code behaves for Support:
 
 | Skill | What It Does |
 |-------|-------------|
-| `/investigate` | Trace a customer-reported symptom through the code |
-| `/explain-feature` | Plain-language explanation of how a feature works end-to-end |
-| `/check-permissions` | Look up which abilities/permissions gate a feature |
-| `/trace-error` | Decode an error message or stack trace into plain English |
-| `/find-config` | Find feature flags and department settings that affect behavior |
 | `/api-lookup` | Find a REST endpoint and explain what it does |
+| `/check-permissions` | Look up which abilities/permissions gate a feature |
 | `/data-flow` | Trace data from UI field through API to database and back |
-| `/recent-changes` | Check git history for "this was working before" investigations |
+| `/explain-feature` | Plain-language explanation of how a feature works end-to-end |
+| `/find-config` | Find feature flags and department settings that affect behavior |
+| `/investigate` | Trace a customer-reported symptom through the code |
 | `/known-limitations` | Search for TODOs, FIXMEs, and documented limitations |
+| `/recent-changes` | Check git history for "this was working before" investigations |
 | `/support-brief` | Generate a shareable, KB-ready summary of a feature |
+| `/trace-error` | Decode an error message or stack trace into plain English |
 
 ## Prerequisites
 
