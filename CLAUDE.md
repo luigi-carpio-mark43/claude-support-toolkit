@@ -32,6 +32,10 @@ I am a **Product Support Specialist** at Mark43, not a software engineer. I use 
 
 ### Permissions & Abilities
 - Mark43 uses an abilities-based permission system. When investigating features, always identify which abilities gate access.
+- **Permission patterns differ by repo** — know which pattern to look for:
+  - **RMS / mark43 / CAD**: `@AbilitiesAllowed` annotations + legacy `ensurePermission()` checks. Ability constants in `rms-abilities/` or `cad-abilities/`.
+  - **JMS**: Spring Security `@PreAuthorize` + `UserAbility` enum (56 abilities). Syncs abilities with RMS.
+  - **Security-alerts**: `@Authorization(abilities = {"View Usage Logs"})` annotation.
 - Distinguish between legacy ability checks (constants in `rms-abilities`) and annotation-based checks (`@AbilitiesAllowed`).
 - Flag if a feature uses the broad `VIEW_GENERAL` or `EDIT_GENERAL` abilities vs. specific ones.
 
@@ -44,7 +48,11 @@ I am a **Product Support Specialist** at Mark43, not a software engineer. I use 
 | Repo | Path | Description |
 |------|------|-------------|
 | `mark43` | `C:\Users\LuigiCarpio\IdeaProjects\mark43` | Monorepo: core services, shared infrastructure, frontends |
-| `rms` | `C:\Users\LuigiCarpio\IdeaProjects\rms` | RMS product: Java backend, React/TypeScript frontend, E2E tests |
+| `rms` | `C:\Users\LuigiCarpio\IdeaProjects\rms` | RMS product: Java 8 backend (Guice/JAX-RS), React/TypeScript frontend |
+| `cad` | `C:\Users\LuigiCarpio\IdeaProjects\cad` | CAD product: real-time emergency dispatch (Java + React/Electron) |
+| `jms` | `C:\Users\LuigiCarpio\IdeaProjects\jms` | Jail Management System: booking, detainee tracking (Spring Boot + GraphQL) |
+| `api-gateway` | `C:\Users\LuigiCarpio\IdeaProjects\api-gateway` | External API gateway: OpenAPI contracts, proxies to backend services |
+| `security-alerts` | `C:\Users\LuigiCarpio\IdeaProjects\security-alerts` | Security alert ingestion and management (Spring Boot + React) |
 
 ### Key Directories (RMS)
 - **Frontend code**: `rms/client/src/scripts/`
@@ -60,17 +68,74 @@ I am a **Product Support Specialist** at Mark43, not a software engineer. I use 
 - **Auth/security**: `mark43/server-security/`
 - **Frontend apps**: `mark43/js/`, `mark43/client/`, `mark43/cad-client/`
 
+### Key Directories (CAD)
+- **Frontend code**: `cad/cad-fe/` (React + MobX + Electron)
+- **Backend services**: `cad/cad-services/`
+- **REST API**: `cad/cad-rest-server/` and `cad/cad-api/`
+- **Abilities/permissions**: `cad/cad-abilities/`
+- **Database migrations**: `cad/cad-migration/`
+- **Real-time server**: `cad/cad-realtime-server/` (WebSockets)
+- **E2E tests**: `cad/cad-qa/`
+
+### Key Directories (JMS)
+- **Frontend code**: `jms/client/` (React + TypeScript + Vite)
+- **Backend API**: `jms/api/` (Spring Boot + GraphQL)
+- **GraphQL schemas**: `jms/api/src/main/resources/graphql/` (look for `*.graphqls` files)
+- **Abilities/permissions**: `jms/jms-abilities/` + `jms/api/.../security/UserAbility.java`
+- **Database migrations**: `jms/api/src/main/resources/db/migration/`
+- **E2E tests**: `jms/e2e/`
+
+### Key Directories (Security-Alerts)
+- **Frontend code**: `security-alerts/src/main/client/` (React 18 + TanStack)
+- **Backend API**: `security-alerts/src/main/java/com/mark43/alert/` (Spring Boot)
+- **Database migrations**: `security-alerts/src/main/resources/db/migration/`
+
+### Key Directories (API Gateway)
+- **API contracts (OpenAPI specs)**: `api-gateway/api-contracts/v2/`
+- **Lambda functions**: `api-gateway/lambda/`
+- **Generated client libraries**: `api-gateway/libraries/`
+
 ## Tech Stack Reference
 
+The stack varies by repo. When investigating, check which repo you're in.
+
+### RMS / mark43 / CAD (Legacy Stack)
 | Layer | Technology |
 |-------|-----------|
 | Backend | Java 8, Grizzly, Guice (dependency injection), JAX-RS (REST APIs) |
 | Frontend | React 16.14, TypeScript 4.7, Redux, React Query, Webpack 5 |
-| Database | MySQL 8.0 (primary), Flyway (migrations) |
+| Frontend (CAD) | React 17+, TypeScript, **MobX** (not Redux), Vite, **Electron** (desktop) |
+| Database | MySQL 8.0, Flyway (migrations) |
 | Search | Elasticsearch 6.8 / OpenSearch 1.3 |
 | Cache | Redis 6 |
 | Messaging | RabbitMQ |
-| Testing | JUnit (backend), Jest (frontend unit), Cypress + Cucumber (E2E) |
+| Real-time | WebSockets (CAD dispatch) |
+| Testing | JUnit (backend), Jest (frontend), Cypress + Cucumber (E2E) |
+
+### JMS (Modern Stack)
+| Layer | Technology |
+|-------|-----------|
+| Backend | **Java 21**, **Spring Boot 3**, Hibernate ORM |
+| API | **GraphQL** (Spring GraphQL, not REST) |
+| Frontend | React 17, TypeScript 4.9, **Apollo Client** (GraphQL), Vite |
+| Database | MySQL 8.0, Flyway (migrations) |
+| Testing | JUnit 5, Vitest (frontend), Cypress (E2E) |
+
+### Security-Alerts (Modern Stack)
+| Layer | Technology |
+|-------|-----------|
+| Backend | **Java 21**, **Spring Boot 3** |
+| Frontend | React 18, TypeScript, **TanStack Router/Query** |
+| Database | MySQL 8.0, **DynamoDB** (alert rules), Flyway |
+| Messaging | **AWS SQS** (alert ingestion), **AWS SES** (email) |
+| Auth | JWT-based via Mark43 auth-lib |
+
+### API Gateway
+| Layer | Technology |
+|-------|-----------|
+| Specs | OpenAPI / AsyncAPI (576 YAML files) |
+| Runtime | AWS API Gateway, AWS Lambda (Java) |
+| Auth | API key (`x-api-key` header) |
 
 ## Git Commit Convention
 
