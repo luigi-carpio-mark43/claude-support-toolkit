@@ -17,12 +17,16 @@ Sets the ground rules for how Claude Code behaves for Support:
 |-------|-------------|
 | `/api-lookup` | Find a REST endpoint and explain what it does |
 | `/check-permissions` | Look up which abilities/permissions gate a feature |
+| `/compare-endpoints` | Compare how a feature differs across repos (RMS vs CAD vs JMS) |
 | `/data-flow` | Trace data from UI field through API to database and back |
 | `/explain-feature` | Plain-language explanation of how a feature works end-to-end |
 | `/find-config` | Find feature flags and department settings that affect behavior |
+| `/glossary` | Look up Mark43 terminology, domain concepts, and technical jargon |
 | `/investigate` | Trace a customer-reported symptom through the code |
 | `/known-limitations` | Search for TODOs, FIXMEs, and documented limitations |
+| `/migration-impact` | Check what a database migration changes and how it affects data |
 | `/recent-changes` | Check git history for "this was working before" investigations |
+| `/search-diagnostics` | Investigate search/Elasticsearch issues — stale data, missing results |
 | `/support-brief` | Generate a shareable, KB-ready summary of a feature |
 | `/trace-error` | Decode an error message or stack trace into plain English |
 

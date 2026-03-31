@@ -1,0 +1,14 @@
+title: Glossary
+description: Look up and explain Mark43-specific terminology, domain concepts, and technical terms used across the platform
+tags: [support, glossary, terminology, definitions, onboarding]
+aliases: [define, what-is, terminology, vocab, explain-term]
+intent_terms:
+  - what does this term mean
+  - define this concept
+  - what is a soft delete
+  - what does department scoping mean
+  - explain this Mark43 term
+  - glossary lookup
+documents:
+  - path: SKILL.md
+    description: Mark43 glossary and terminology lookup for Support personnel

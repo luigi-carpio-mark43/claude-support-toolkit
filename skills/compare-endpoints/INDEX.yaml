@@ -1,0 +1,13 @@
+title: Compare Endpoints
+description: When a feature exists in multiple repos (RMS, CAD, JMS) — compare how the implementations differ
+tags: [support, comparison, cross-repo, endpoint, implementation]
+aliases: [compare, cross-repo, compare-repos, diff-repos, how-is-this-different]
+intent_terms:
+  - how does this differ between RMS and CAD
+  - compare implementations
+  - same feature different repo
+  - does JMS do this differently
+  - cross-repo comparison
+documents:
+  - path: SKILL.md
+    description: Cross-repo endpoint comparison workflow for Support personnel

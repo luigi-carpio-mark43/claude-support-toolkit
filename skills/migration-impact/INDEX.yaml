@@ -1,0 +1,14 @@
+title: Migration Impact
+description: Given a release version or migration name — explain what it changes and how it could affect existing data
+tags: [support, migration, database, release, upgrade, flyway]
+aliases: [migration, release-impact, schema-change, database-change, what-changed-in-release]
+intent_terms:
+  - what did this migration change
+  - what changed in this release
+  - database migration impact
+  - schema change
+  - after the upgrade
+  - deployment changed behavior
+documents:
+  - path: SKILL.md
+    description: Migration impact analysis workflow for Support personnel

@@ -1,0 +1,14 @@
+title: Search Diagnostics
+description: Investigate Elasticsearch/search issues — index vs database divergence, missing results, stale data, mapping problems
+tags: [support, search, elasticsearch, opensearch, index, sync]
+aliases: [search-issue, elastic, es-diagnostics, reindex, search-sync]
+intent_terms:
+  - search not returning results
+  - record missing from search
+  - search shows old data
+  - elasticsearch issue
+  - search index out of sync
+  - reindex
+documents:
+  - path: SKILL.md
+    description: Search diagnostics workflow for Support personnel
