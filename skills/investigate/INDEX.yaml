@@ -1,5 +1,5 @@
 title: Investigate Issue
-description: Given a symptom, error, or customer complaint — trace through the codebase to explain what's happening, what could cause it, and what Support should check
+description: Given a symptom, error, or customer complaint — trace through the codebase, display a concise case note for Salesforce, and export a detailed analysis to Desktop
 tags: [support, investigation, troubleshooting, triage]
 aliases: [investigate-issue, triage, diagnose]
 intent_terms:
