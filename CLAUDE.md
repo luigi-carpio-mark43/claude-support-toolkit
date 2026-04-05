@@ -179,3 +179,59 @@ chore: update install script for Windows compatibility
 - When referencing code, include the file path and line number so I can look it up.
 - If multiple things could cause an issue, rank them by likelihood.
 - End investigation responses with a **"What to check"** section — actionable steps for Support.
+
+## Diagnostic Skill Output Format
+
+The following are **diagnostic skills** and must always produce two outputs: `/investigate`, `/trace-error`, `/search-diagnostics`, `/support-brief`.
+
+### Output 1: Case Note (displayed in conversation)
+
+A concise summary for copy-pasting into the **Notes section of a Salesforce Support case**. Display it directly in the conversation.
+
+Format:
+
+```
+**[Title] — [short description of the issue]**
+
+**Root Cause (Most Likely):** [1-3 sentence plain-language explanation of what's happening and why]
+
+**What to Verify:**
+1. [actionable check]
+2. [actionable check]
+3. [actionable check]
+
+**Questions for Customer:**
+- [question]
+- [question]
+
+**Resolution Path:** [what needs to happen — workaround, escalation, config change, etc.]
+```
+
+Rules for the case note:
+- Under 300 words
+- No code references, file paths, or line numbers — this is for non-engineers
+- Plain language a support agent or customer success manager can understand
+- Lead with the most likely cause, not an exhaustive list
+- "What to Verify" = things Support can check (settings, data, customer questions), not code
+
+### Output 2: Detailed Analysis (exported to Desktop)
+
+After displaying the case note, use the **Write tool** to export a detailed Markdown file:
+
+**File path:** `C:\Users\LuigiCarpio\Desktop\[Topic]_[SkillType].md`
+- `[Topic]`: short descriptive name with underscores (e.g., `Export_PDF_Size_Limit`, `Search_Results_Missing`)
+- `[SkillType]`: `Investigation`, `Error_Trace`, `Search_Diagnostic`, or `Support_Brief`
+
+The file must always include:
+1. A copy of the case note (so the file is self-contained)
+2. Detailed analysis with code references (file paths + line numbers)
+3. A quick reference table mapping symptoms to causes and relevant files
+4. Actionable next steps for Support
+
+Each diagnostic skill defines its own detailed sections in its skill file.
+
+Rules for the export:
+- Include file paths and line numbers in the export (but NOT in the case note)
+- Rank causes by likelihood
+- **Always produce BOTH outputs** — never skip the case note or the export
+- After writing, confirm: "Detailed analysis exported to `C:\Users\LuigiCarpio\Desktop\[filename].md`"
