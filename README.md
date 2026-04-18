@@ -15,6 +15,7 @@ Sets the ground rules for how Claude Code behaves for Support:
 
 | Skill | What It Does |
 |-------|-------------|
+| `/analyze-har` | Parse a HAR file to extract API call evidence — timelines, errors, missing data |
 | `/api-lookup` | Find a REST endpoint and explain what it does |
 | `/check-permissions` | Look up which abilities/permissions gate a feature |
 | `/compare-endpoints` | Compare how a feature differs across repos (RMS vs CAD vs JMS) |
@@ -105,7 +106,26 @@ Once installed, open Claude Code in any of the Mark43 repos (`mark43`, `rms`, et
 /trace-error "User does not have required ability: APPROVE_REPORTS"
 /explain-feature case merging
 /recent-changes report approval --since last week
+/analyze-har C:\Users\you\Desktop\customer-capture.har
 ```
+
+### Typical Investigation Workflow
+
+For a thorough investigation, chain skills together:
+
+1. **`/investigate`** — trace the issue through code and identify the root cause
+2. **`/analyze-har`** — parse a HAR file captured during reproduction to confirm the theory with network evidence
+3. Attach both outputs (case note + detailed export) to the Salesforce case and Jira ticket
+
+### Capturing a HAR File
+
+To capture a HAR file for `/analyze-har`:
+
+1. Open browser DevTools (F12) > **Network** tab
+2. Check **Preserve log** (so navigation doesn't clear the capture)
+3. Reproduce the issue
+4. Right-click in the Network panel > **Save all as HAR with content**
+5. Run `/analyze-har` with the file path
 
 ## Updating
 

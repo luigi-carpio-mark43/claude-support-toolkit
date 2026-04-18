@@ -1,0 +1,14 @@
+title: Analyze HAR
+description: Given a HAR file from a browser network capture — parse API calls, build a timeline, flag errors and missing data, and produce a case note with detailed export
+tags: [support, har, network, api, troubleshooting, evidence]
+aliases: [har, har-analysis, network-trace, api-trace]
+intent_terms:
+  - analyze this HAR file
+  - look at this network capture
+  - check this HAR
+  - what happened in this HAR
+  - review the network traffic
+  - what API calls were made
+documents:
+  - path: SKILL.md
+    description: HAR file analysis workflow for Support personnel
